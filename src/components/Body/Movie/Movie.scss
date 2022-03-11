@@ -1,0 +1,22 @@
+.movie{
+    .catalog{
+        display: none;
+    }
+    .header-search{
+        background-image: url(../../../assets/images/footer.jpg);
+        height: 200px;
+        position: relative;
+    }
+    .header-search::after{
+        content: '';
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        width: 100%;
+        height: 100%;
+        background-image: linear-gradient(to top, #0f0f0f, rgba(0, 0, 0, 0));
+    }
+    .view-more-catalog{
+        display: none;
+    }
+}

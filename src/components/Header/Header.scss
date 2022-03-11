@@ -1,0 +1,90 @@
+@use '../../scss/index' as *;
+
+.header{
+    position: fixed;
+    z-index: 99;
+    width: 100%;
+    .header-container{
+        justify-content: space-between;
+        height: 100%;
+        padding: 32px 32px;
+        transition: all 0.5s;
+        .brand{
+            .logo{
+                display: flex;
+            }
+        }
+        .navigation{
+            align-items: center;
+            .nav-item{
+                margin: 0 16px;
+                font-size: 24px;
+                font-weight: 700;
+                position: relative;
+            }
+            .nav-item::after{
+                content: "";
+                position: absolute;
+                bottom: 0;
+                left: 50%;
+                transform: translateX(-50%);
+                width: 0;
+                transition: width 0.5s ease;
+                height: 2px;
+                background-color: #ff0000;
+            }
+            .nav-item:hover::after{
+                width: 100%;
+            }
+            .active::after{
+                width: 100%;
+            }
+            .search-field{
+                padding-left: 20px;
+                input{
+                    border-width: 0;
+                    width: 0;
+                    transition: all 0.5s ease;
+                    font-size: 16px;
+                    padding-left: 8px;
+                    border-top-left-radius: 8px;
+                    border-bottom-left-radius: 8px;
+                    background-color: #ffffff;
+                    cursor: text;
+                    caret-color: #fff;
+                    color: #fff;
+                }
+                input::placeholder {
+                    color: rgb(155, 164, 182);
+                  }
+                div{
+                    // border-radius: 8px;
+                    border-top-right-radius: 8px;
+                    border-bottom-right-radius: 8px;
+                    font-size: 24px;
+                    line-height: 1;
+                    padding: 8px 8px 8px 0;
+                    background-color: #fff;
+                    color: rgba(0, 0, 0, 0.5);
+                    cursor: pointer;
+                    transition: all 0.5s ease;
+
+                }
+            }
+            .search-field:hover{
+                input{
+                    // border: 2px solid #2c313b;
+                    width: 150px;
+                    background-color: #2c313b;
+                    box-shadow: 0px 0px 10px 5px #cfc1c14d;
+                }
+                div{
+                    padding-left: 8px;
+                    border-top-left-radius: 0;
+                    border-bottom-left-radius: 0;
+                    box-shadow: 0px 0px 10px 5px #cfc1c14d;
+                }
+            }
+        }
+    }
+}

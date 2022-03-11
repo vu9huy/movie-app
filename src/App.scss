@@ -1,0 +1,220 @@
+
+@use './scss/index' as *;
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&display=swap');
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+  }
+  
+  html{
+    font-size: 100%;
+  
+    @include tablet{
+      font-size: 80%;
+    }
+  
+    @include mobile{
+      font-size: 60%;
+    }
+  }
+  
+  body{
+    font-family: $font-family;
+    font-weight: 400;
+    line-height: 1.5;
+  
+    background-color: $body-bg;
+    color: #fff;
+  
+    @include mobile{
+      margin-bottom: 3rem;
+    }
+  }
+  
+  a{
+    color: unset;
+    text-decoration: none;
+  }
+  
+  @media (hover : hover){
+    a:hover{
+      color: $main-color;
+    }
+  }
+  
+  button, input{
+    outline: 0;
+  }
+  
+  ul{
+    list-style-type: none;
+  }
+  
+  img{
+    max-width: 100%;
+    height: auto;
+  }
+  
+  iframe{
+    border: 0;
+  }
+  
+  .container{
+    max-width: 1660px;
+    margin: 0;
+  }
+  
+  .mb-3{
+    margin-bottom: 3rem;
+  }
+  
+  .mb-2{
+    margin-bottom: 2rem;
+  }
+  
+  .section{
+    padding: 0 2rem;
+  }
+  
+  .section__header{
+    @include flex(center, space-between)
+  }
+
+  .flex-column{
+    display: flex;
+    flex-direction: column;
+  }
+
+  .flex-row{
+    display: flex;
+    flex-direction: row;
+  }
+  
+
+  .brand{
+    align-items: center;
+    cursor: pointer;
+    .logo{
+        width: 60px;
+        height: 60px;
+        img{
+            border-radius: 50px;
+        }
+    }
+    p{
+        padding-left: 8px;
+        font-size: 40px;
+        font-weight: 700;
+    }
+    p:hover{
+        color: $main-color;
+        transition: all 0.5s;
+    }
+}
+
+.title{
+  font-size: 32px;
+  font-weight: 700;
+  text-transform: capitalize;
+}
+
+.background{
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.button-type1{
+  background-color: $main-color;
+  border-radius: 30px;
+  padding: 12px 32px;
+  color: #fff;
+  border: 3px solid $main-color;
+}
+
+.button-type1:hover{
+  box-shadow: 0px 0px 10px 10px #ff00004d;
+  transition: all 0.5s;
+}
+
+.button-type2{
+  background-color: transparent;
+  border-radius: 30px;
+  padding: 12px 32px;
+  border: 3px solid #fff;
+  color: #fff;
+  margin-left: 20px;
+}
+
+.button-type2:hover{
+  background-color: #fff;
+  color: $main-color;
+  transition: all 0.5s;
+}
+
+.name{
+  font-size: 80px;
+  font-weight: 700;
+  line-height: 1;
+  transform: scaleY(0.92);
+}
+
+.overview{
+  font-size: 18px;
+  line-height: 1.3;
+  font-weight: 700;
+  transform: scaleY(0.92);
+  padding-top: 48px;
+}
+
+// Responsive Swiper Slider 
+
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+  .display-list{
+      padding: 18px;
+      .display-list-container{
+
+          .display-list-item{
+              min-width: 180px;
+              max-width: 200px;
+              margin-right: 12px !important;
+              .title{
+                  font-size: 16px;
+              }
+          }
+      }
+  }
+}
+
+@media screen and (max-width: 540px) {
+  .display-list{
+      padding: 12px;
+      .display-list-container{
+          .display-list-item{
+              min-width: 140px;
+              max-width: 180px;
+              margin-right: 0 !important;
+              .title{
+                  font-size: 16px;
+              }
+          }
+      }
+  }
+}
+
+.header-semi-page{
+  background-image: url(../src/assets/images/footer.jpg);
+  height: 200px;
+  position: relative;
+}
+.header-semi-page::after{
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  background-image: linear-gradient(to top, #0f0f0f, rgba(0, 0, 0, 0));
+}

@@ -1,0 +1,87 @@
+@use '../../../scss/index' as *;
+
+.type-label{
+    padding: 0 32px 60px 32px;
+    .display-list-top{
+        padding-left: 20px;
+        font-size: 48px;
+        font-weight: 700;
+        .catalog{
+            text-transform: capitalize;
+        }
+    }
+    .display-list-container{
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+        gap: 12px;
+        .display-list-item{
+            padding-top: 32px;
+            // min-width: 200px;
+            // max-width: 220px;
+            height: auto;
+            cursor: pointer;
+            .movie-image{
+                position: relative;
+                margin-right: 10px;
+                img{
+                    border-radius: 30px;
+                }
+                .movie-button{
+                    font-size: 50px;
+                    line-height: 0.9;
+                    position: absolute;
+                    padding: 2px 28px;
+                    top: 50%;
+                    left: 50%;
+                    transform: translate(-50%, -50%) scale(0);
+                    transition: transform 0.3s ease, box-shadow 0.3s ease;
+                }
+                
+            }
+            .movie-image::before{
+                content: "";
+                position: absolute;
+                top: 0;
+                left: 0;
+                bottom: 0;
+                right: 0;
+                background-color: #000;
+                opacity: 0;
+                transition: opacity 0.3s ease;
+                border-radius: 30px;
+            }
+            .movie-image:hover::before{
+                opacity: 0.8;
+            }
+            .movie-image:hover{
+                .movie-button{
+                    transform: translate(-50%, -50%) scale(1);
+                    box-shadow: 0px 0px 10px 10px #ff00004d;
+                    transition: all 0.5s;
+                }
+            }
+            .title{
+                padding-top: 12px;
+                font-size: 18px;
+                font-weight: 700;
+            }
+            .title:hover{
+                color: $main-color;
+            }
+            
+        }
+    }
+    .click-load-more{
+        margin: 32px 0 0 0;
+        font-size: 20px;
+        font-weight: 700;
+        line-height: 1;
+        padding: 12px 48px;
+        cursor: pointer;
+    }
+    .no-result{
+        color: $main-color;
+        font-size: 20px;
+        padding-left: 20px;
+    }
+}
