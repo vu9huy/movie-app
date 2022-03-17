@@ -21,7 +21,7 @@ const MovieSimilar = ({ id, catalog }) => {
                 const response = await listApi.getSimilar(catalog, id, params);
 
                 setMovieSimilars(response.results);
-                console.log(response.results);
+                // console.log(response.results);
 
             } catch (error) {
                 console.log('Failed to fetch product list: ', error);

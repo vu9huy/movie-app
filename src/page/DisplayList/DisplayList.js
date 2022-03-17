@@ -62,7 +62,7 @@ const DisplayList = ({ catalog, type }) => {
                             key={index} className='display-list-item movie-card'
 
                         >
-                            <Link to={catalog + '/' + item.id}>
+                            <Link to={'/' + catalog + '/' + item.id}>
                                 <div className='movie-image'>
                                     <div className='movie-button button-type1'>
                                         <i className='bx bx-play'></i>

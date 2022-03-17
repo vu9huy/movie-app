@@ -1,7 +1,7 @@
 import React from 'react';
 import './GetSearch.scss';
 
-import { Link } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
 
 import listApi from '../../../api/listApi';
 import apiConfig from '../../../api/apiConfig';
@@ -14,6 +14,8 @@ import '../../../assets/fonts/boxicons-2.1.1/css/boxicons.min.css';
 function GetSearch({ catalog, keyword }) {
     const [list, setList] = useState([]);
     const [pageNum, setPageNum] = useState(1);
+    const params = useParams();
+    // console.log(params);
 
     function handleLoadMoreMovie() {
         setPageNum(pageNum + 1)
@@ -43,6 +45,7 @@ function GetSearch({ catalog, keyword }) {
         fetchList();
     }, [keyword])
 
+
     useEffect(() => {
         const fetchList = async () => {
             try {
@@ -64,6 +67,10 @@ function GetSearch({ catalog, keyword }) {
         }
         fetchList();
     }, [pageNum])
+
+    function handleLoadMoreMovie() {
+
+    }
     return (
         <div className='get-search'>
             <div className='display-list-top flex-row'>
@@ -77,7 +84,7 @@ function GetSearch({ catalog, keyword }) {
                         !!item.poster_path && <div
                             key={index} className='display-list-item movie-card'
                         >
-                            <Link to={'/' + item.id}>
+                            <Link to={'/' + catalog + '/' + item.id} onClick={() => handleLoadMoreMovie()}>
                                 <div className='movie-image'>
                                     <div className='movie-button button-type1'>
                                         <i className='bx bx-play'></i>
