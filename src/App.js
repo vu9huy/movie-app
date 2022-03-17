@@ -10,10 +10,11 @@ import './App.scss';
 
 import { BrowserRouter as Router, Switch, Route, useParams } from "react-router-dom";
 import DisplayTypeLabel from './components/Body/Type/DisplayTypeLabel';
+import Login from './components/Body/Login/Login';
+import Detail from './components/Body/Detail/Detail';
 
 
 function App() {
-
   return (
     <div className="App">
       <Router>
@@ -37,6 +38,16 @@ function App() {
         </Route>
         <Route path={'/tvs/:typeLabel'}>
           <DisplayTypeLabel
+            catalog={'tv'}
+          />
+        </Route>
+        <Route path={'/movie/:id'}>
+          <Detail
+            catalog={'movie'}
+          />
+        </Route>
+        <Route path={'/tv/:id'}>
+          <Detail
             catalog={'tv'}
           />
         </Route>

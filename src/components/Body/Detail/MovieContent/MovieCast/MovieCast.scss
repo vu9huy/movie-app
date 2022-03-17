@@ -1,0 +1,18 @@
+.movie-content-detail-casts{
+    .movie-content-detail-cast{
+        width: 100px;
+        margin-right: 12px;
+        img{
+            border-radius: 4px;
+        }
+        .movie-content-detail-cast-name{
+            font-size: 14px;
+            transform: scale(1, 0.9);
+        }
+    }
+}
+.movie-content-detail-casts-title{
+    font-size: 28px;
+    font-weight: 700;
+    transform: scale(1, 0.9);
+}

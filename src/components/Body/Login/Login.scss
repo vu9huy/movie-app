@@ -1,0 +1,101 @@
+
+
+.login{
+    position: fixed;
+    z-index: 1000;
+    width: 100vw;
+    height: 100vh;
+    padding-top: -200px;
+    background-color: rgba(0, 0, 0, 0.3);
+    color: rgba(255, 255, 255, 0.7);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    .login-wrapper{
+        position: relative;
+        background-color: rgba(0,0,0, 0.75);
+        border-radius: 4px;
+        justify-content: center;
+        align-items: center;
+        padding: 60px 60px;
+        .login-closed{
+            position: absolute;
+            top: 0;
+            right: 0;
+            font-size: 40px;
+            line-height: 1;
+            padding: 0;
+            cursor: pointer;
+            background-color: rgba(0,0,0, 0.9);
+            border-radius: 4px;
+        }
+        .login-closed:hover{
+            background-color: rgba(214, 199, 199, 0.5);
+        }
+    }
+    .login-item{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 12px 20px;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    border-radius: 4px;
+    font-weight: 600;
+    margin-bottom: 20px;
+    background-color: #333333;
+    color: #fff;
+    width: 280px;
+    font-size: 14px;
+
+    }
+    .login-item::placeholder {
+        color: #8c8c8c;
+      }
+    .login-button{
+        background-color: rgb(229, 9, 20);
+        color: #fff;
+        cursor: pointer;
+        border-width: 0;
+    }
+    .login-button:hover{
+        background-color: rgba(229, 9, 20, 0.8);
+    }
+    .or{
+        margin: 20px 0 20px;
+        position: relative;
+        font-size: 20px;
+        font-weight: 600;
+        width: 100%;
+        text-align: center;
+    }
+    .or::before{
+        content: '';
+        position: absolute;
+        left: 0;
+        top: 50%;
+        width: 40%;
+        height: 1px;
+        background-color: #fff;
+    }
+    .or::after{
+        content: '';
+        position: absolute;
+        right: 0;
+        top: 50%;
+        width: 40%;
+        height: 1px;
+        background-color: #fff;
+    }
+    .sign-up{
+        font-size: 14px;
+        font-weight: 600;
+        a{
+            padding-left: 4px;
+            color: rgb(31, 152, 243);
+        }
+        a:hover{
+            color: rgba(31, 152, 243, 0.8);
+        }
+    }
+}

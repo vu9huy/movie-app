@@ -43,6 +43,8 @@ function DisplayMain() {
             grabCursor={true}
             spaceBetween={0}
             slidesPerView={1}
+            speed={800}
+            autoplay={{ delay: 3000 }}
         >
             {
                 list.map((item, index) => (
@@ -75,7 +77,7 @@ function DisplayMain() {
                 ))
             }
         </Swiper>
-    </div>
+    </div >
     )
 }
 

@@ -30,15 +30,24 @@ const listApi = {
         return axiosClient.get(url, { params })
     },
 
-    // getCast: (catalog, params) => {
-    //     const url = '/search' + catalog;
-    //     return axiosClient.get(url, { params })
-    // },
+    getDetail: (catalog, id, params) => {
+        const url = catalog + '/' + id;
+        return axiosClient.get(url, { params })
+    },
 
-    // getSimilar: (params) => {
-    //     const url = '/tv' + '/popular';
-    //     return axiosClient.get(url, { params })
-    // }
+    getCast: (catalog, id, params) => {
+        const url = catalog + '/' + id + '/credits';
+        return axiosClient.get(url, { params })
+    },
+    getTrailer: (catalog, id, params) => {
+        const url = catalog + '/' + id + '/videos';
+        return axiosClient.get(url, { params })
+    },
+
+    getSimilar: (catalog, id, params) => {
+        const url = catalog + '/' + id + '/similar';
+        return axiosClient.get(url, { params })
+    }
 }
 
 export default listApi;

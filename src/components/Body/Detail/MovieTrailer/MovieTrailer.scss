@@ -1,0 +1,13 @@
+.movie-trailers{
+    padding: 0 40px;
+    justify-content: center;
+    align-items: center;
+    .movie-trailer{
+        padding-bottom: 32px;
+        .movie-trailer-title{
+            font-size: 32px;
+            font-weight: 600;
+        }
+    }
+    
+}
