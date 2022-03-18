@@ -2,13 +2,18 @@ import React, { useState, useEffect, Fragment } from 'react';
 import './MovieSimilar.scss';
 import listApi from '../../../../api/listApi';
 import apiConfig from '../../../../api/apiConfig';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import { Swiper, SwiperSlide } from "swiper/react";
 
 
 
 const MovieSimilar = ({ id, catalog }) => {
 
+    const { pathname } = useLocation();
+
+    useEffect(() => {
+        window.scrollTo(0, 0);
+    }, [pathname]);
     const [movieSimilars, setMovieSimilars] = useState('');
 
     useEffect(() => {
@@ -48,7 +53,7 @@ const MovieSimilar = ({ id, catalog }) => {
                                 {!!movieSimilar.poster_path && <div
                                     key={movieSimilar.id} className=' movie-card'
                                 >
-                                    <Link to={'/' + movieSimilar.id}>
+                                    <Link to={'/' + catalog + '/' + movieSimilar.id}>
                                         <div className='movie-image'>
                                             <div className='movie-button button-type1'>
                                                 <i className='bx bx-play'></i>
